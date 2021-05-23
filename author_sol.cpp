@@ -16,12 +16,15 @@ int main() {
 		// 'y' must be within these ranges (inclusive)
 		// n + 1 <= y <= 2n
 		// q - n <= y <= q - 1
+		// calculate where the valid y's will start (either from q - n or n + 1)
 		long long l = max(q - n, n + 1);
+		// calculate where the valid y's will end (either from q - 1, 2 * n)
 		long long r = min(q - 1, 2 * n);
 		long long ans = 0;
 		if (l > r) {
 			ans = 0;
 		} else {
+			// calculate the number of elements from 'l' to 'r'
 			ans = r - l + 1;
 		}
 		cout << ans << '\n';
